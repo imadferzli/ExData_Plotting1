@@ -65,7 +65,7 @@ with(hh.power.cons.on.dates, {
 })
 axis(1, at=x.ticks, labels=x.tick.labels)
 legend("topright", col=c("black", "red", "blue"), lty=rep("solid", 3), lwd=rep(1, 3), 
-       legend=names(hh.power.cons.on.dates[7:9]))
+       bty = "n", legend=names(hh.power.cons.on.dates[7:9]))
 
 ## Then the plot of global reactive power vs. datetime
 with(hh.power.cons.on.dates, plot(datetime, Global_reactive_power, type = "l", xaxt="n"))
