@@ -64,12 +64,13 @@ with(hh.power.cons.on.dates, {
     lines(datetime, Sub_metering_3, col="blue", lty="solid", lwd=1)
 })
 axis(1, at=x.ticks, labels=x.tick.labels)
-legend("topright", col=c("black", "red", "blue"), lty=rep("solid", 3), lwd=rep(1, 3), 
-       bty = "n", legend=names(hh.power.cons.on.dates[7:9]))
+legend("top", col=c("black", "red", "blue"), lty=rep("solid", 3), lwd=rep(1, 3), 
+       bty = "n", legend=names(hh.power.cons.on.dates[7:9]), xjust=1)
 
 ## Then the plot of global reactive power vs. datetime
-with(hh.power.cons.on.dates, plot(datetime, Global_reactive_power, type = "l", xaxt="n"))
+with(hh.power.cons.on.dates, plot(datetime, Global_reactive_power, type = "l", xaxt="n", yaxt="n"))
 axis(1, at=x.ticks, labels=x.tick.labels)
+axis(2, at=seq(0,0.5, by=0.1), labels=seq(0,0.5, by=0.1))
 
 ## Finally, save to png file, forcing the width and height to the required pixels although these appear
 ## to be defaults anyway
